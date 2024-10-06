@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List (Vazifalar ro'yxati)</title>
+    <style>
+      /* Asosiy stil sozlamalari */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Todo List konteyneri */
+      #todo-container {
+        width: 400px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        text-align: center;
+      }
+
+      /* Sarlavha */
+      #todo-container h3 {
+        margin: 0 0 20px 0;
+        font-size: 24px;
+        color: #333;
+      }
+
+      /* Input va + tugmasi konteyneri */
+      .input-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      /* Input maydoni */
+      input[type="text"] {
+        width: calc(100% - 50px);
+        padding: 12px 10px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      input[type="text"]:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+
+      /* + Tugma */
+      .add-btn {
+        width: 40px;
+        height: 40px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .add-btn:hover {
+        background-color: #218838;
+      }
+
+      /* Vazifalar ro'yxati */
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      ul li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f9f9f9;
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        border-radius: 25px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease-in-out;
+      }
+
+      ul li:hover {
+        transform: translateY(-3px);
+      }
+
+      ul li.completed {
+        background-color: #d4edda;
+        color: #155724;
+        text-decoration: line-through;
+      }
+
+      /* O'chirish tugmasi */
+      button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 5px 12px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #c82333;
+      }
+
+      /* Ekran kengligi 400px yoki undan kichik bo'lsa */
+      @media (max-width: 400px) {
+        #todo-container {
+          width: 90%;
+          padding: 20px;
+        }
+
+        #todo-container h3 {
+          font-size: 20px;
+        }
+
+        input[type="text"] {
+          font-size: 14px;
+          padding: 10px;
+        }
+
+        ul li {
+          padding: 10px;
+        }
+
+        button {
+          padding: 5px 10px;
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="todo-container">
+      <h3>To-do List (Vazifalar ro'yxati)</h3>
+
+      <div class="input-container">
+        <input type="text" id="todo-input" placeholder="Vazifa qo'shish..." />
+        <button class="add-btn" id="add-btn">+</button>
+      </div>
+
+      <ul id="todo-list"></ul>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
